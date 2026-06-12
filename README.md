@@ -10,6 +10,13 @@
 
 从 [Releases](https://github.com/Sean-Halford/gaokaoagent/releases) 下载最新版 `GaokaoAgent-v1.0.zip`，解压到任意目录。
 
+> 如果没有 Release，可从源码运行（见下方[从源码运行](#从源码运行)），或自行打包：
+> ```bash
+> cd gaokaoagent
+> build.ps1
+> # 产物在 dist/GaokaoAgent/，压缩后约 399 MB
+> ```
+
 ### 2. 启动
 
 双击 `start.bat`，浏览器自动打开 `http://127.0.0.1:7860/`。
@@ -116,6 +123,29 @@ python -m src.main stats                                  # 统计
 | 豆包 | [console.volcengine.com/ark](https://console.volcengine.com/ark) | 50 万 token |
 | 千问 | [dashscope.console.aliyun.com](https://dashscope.console.aliyun.com/apiKey) | 100 万 token |
 | 智谱 | [open.bigmodel.cn](https://open.bigmodel.cn/usercenter/apikeys) | 200 万 token |
+
+## 发布 Release
+
+打包后的 ZIP 约 399 MB（含 Python + PaddleOCR 模型），需要手动上传到 GitHub Release。
+
+### 1. 本地打包
+
+```powershell
+cd gaokaoagent
+.\build.ps1
+# 产物: dist/GaokaoAgent-v1.0.zip (~399 MB)
+```
+
+### 2. 创建 Release
+
+1. 打开 [Releases 页面](https://github.com/Sean-Halford/gaokaoagent/releases)
+2. 点击 **Draft a new release**
+3. Tag: `v1.0`（create new tag）
+4. Title: `GaokaoAgent v1.0`
+5. 上传 `dist/GaokaoAgent-v1.0.zip`
+6. 点击 **Publish release**
+
+> GitHub Release 单个文件最大 2 GB，399 MB 直接上传即可，无需 Git LFS。
 
 ## License
 
