@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c ' *)",
+      "Bash(pip install *)",
+      "PowerShell(python -m pip install openai python-dotenv pyyaml pydantic Pillow opencv-python Jinja2 2>&1)",
+      "PowerShell(Get-Command python.exe -ErrorAction SilentlyContinue)",
+      "PowerShell(Get-Command python3.exe -ErrorAction SilentlyContinue)",
+      "PowerShell(Get-Command py.exe -ErrorAction SilentlyContinue)",
+      "PowerShell(py -m pip install openai python-dotenv pyyaml pydantic Pillow opencv-python Jinja2 2>&1)",
+      "PowerShell(py -0p 2>&1)",
+      "PowerShell(& \"C:\\\\Users\\\\�ۺ���\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\" -m pip install openai python-dotenv pyyaml pydantic Pillow opencv-python Jinja2 2>&1)",
+      "Read(//c/Users/邵海峰/AppData/Local/Programs/Python//**)",
+      "Read(//c//**)",
+      "Read(//d/Anaconda/**)"
+    ]
+  }
+}

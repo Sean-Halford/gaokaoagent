@@ -1,0 +1,390 @@
+# 北京卷高考语文评分标准与判题知识库
+# 基于历年北京卷高考语文考试说明和阅卷经验整理
+
+exam_profile:
+  name: "北京卷高考语文"
+  full_score: 150
+  distinctive_features:
+    - "名著阅读考查深入（《红楼梦》《论语》为核心考查书目）"
+    - "多文本阅读为北京卷特色题型（2-3篇材料比较阅读）"
+    - "大作文二选一：一篇偏议论思辨，一篇偏记叙抒情"
+    - "微写作三选一：实用类/议论类/抒情类各有侧重"
+    - "文化常识融入语境考查，不单独命题"
+    - "北京地域文化、历史、民俗常作为语料来源"
+
+# ===== 题型评分标准 =====
+
+question_types:
+
+  big_essay:
+    name: "大作文"
+    max_score: 50
+    description: "二选一，字数不少于700字。一篇偏议论/思辨，一篇偏记叙/抒情。"
+
+    grading_dimensions:
+      - name: "立意"
+        max_score: 10
+        weight: 0.20
+        description: "观点是否明确、新颖、有深度；对题目的理解是否准确"
+        scoring_levels:
+          - level: "一类"
+            range: [9, 10]
+            criteria: "立意深刻，见解独到，能透过现象看本质"
+          - level: "二类"
+            range: [7, 8]
+            criteria: "立意明确，有自己看法，但深度不足"
+          - level: "三类"
+            range: [5, 6]
+            criteria: "立意基本明确，但较为肤浅或套话"
+          - level: "四类"
+            range: [3, 4]
+            criteria: "立意模糊，偏题或泛泛而谈"
+          - level: "五类"
+            range: [1, 2]
+            criteria: "严重偏题，不知所云"
+
+      - name: "内容"
+        max_score: 13
+        weight: 0.26
+        description: "素材是否充实、新鲜；论证是否有力（议论）；细节是否生动（记叙）"
+        scoring_levels:
+          - level: "一类"
+            range: [12, 13]
+            criteria: "内容充实，材料丰富，论证严密/描写生动"
+          - level: "二类"
+            range: [9, 11]
+            criteria: "内容较充实，材料能支撑观点/叙事完整"
+          - level: "三类"
+            range: [6, 8]
+            criteria: "内容单薄，材料陈旧单一"
+          - level: "四类"
+            range: [3, 5]
+            criteria: "内容空洞，缺乏具体材料"
+          - level: "五类"
+            range: [1, 2]
+            criteria: "几乎没有实质性内容"
+
+      - name: "结构"
+        max_score: 10
+        weight: 0.20
+        description: "层次是否分明；逻辑是否清晰；段落衔接是否自然"
+        scoring_levels:
+          - level: "一类"
+            range: [9, 10]
+            criteria: "结构严谨，层次清晰，过渡自然"
+          - level: "二类"
+            range: [7, 8]
+            criteria: "结构完整，层次较清楚"
+          - level: "三类"
+            range: [5, 6]
+            criteria: "结构基本完整但松散"
+          - level: "四类"
+            range: [3, 4]
+            criteria: "结构混乱，缺乏逻辑"
+          - level: "五类"
+            range: [1, 2]
+            criteria: "没有结构意识"
+
+      - name: "语言"
+        max_score: 12
+        weight: 0.24
+        description: "表达是否流畅、有文采；语言是否准确生动"
+        scoring_levels:
+          - level: "一类"
+            range: [11, 12]
+            criteria: "语言流畅优美，有文采，准确凝练"
+          - level: "二类"
+            range: [8, 10]
+            criteria: "语言通顺，表达清楚"
+          - level: "三类"
+            range: [5, 7]
+            criteria: "语言基本通顺，偶有病句"
+          - level: "四类"
+            range: [3, 4]
+            criteria: "语病较多，表达不清"
+          - level: "五类"
+            range: [1, 2]
+            criteria: "语言混乱，词不达意"
+
+      - name: "书写"
+        max_score: 5
+        weight: 0.10
+        description: "卷面整洁；字迹工整；标点规范"
+        scoring_levels:
+          - level: "一类"
+            range: [5, 5]
+            criteria: "卷面整洁，字迹工整美观"
+          - level: "二类"
+            range: [4, 4]
+            criteria: "卷面较整洁，字迹清楚"
+          - level: "三类"
+            range: [3, 3]
+            criteria: "卷面一般，字迹可辨"
+          - level: "四类"
+            range: [1, 2]
+            criteria: "卷面潦草，影响阅读"
+
+    common_mistakes:
+      - tag: "偏题跑题"
+        severity: "critical"
+        description: "没有读懂题目要求，或者写着写着偏离主题"
+        fix: "动笔前列详细提纲，每段写完检查是否扣题"
+      - tag: "立意肤浅"
+        severity: "high"
+        description: "停留在表面论述，缺乏深入思考"
+        fix: "练习多角度分析社会现象，积累思辨素材"
+      - tag: "论据不足"
+        severity: "high"
+        description: "只有观点没有论据，或论据陈旧（总是用司马迁、爱迪生）"
+        fix: "建立分类素材本，每个分论点准备2-3个鲜活论据"
+      - tag: "结构松散"
+        severity: "medium"
+        description: "段落之间缺乏逻辑关系，想到哪写到哪"
+        fix: "练习提纲写作，每次作文先列好结构再动笔"
+      - tag: "语言平淡"
+        severity: "medium"
+        description: "表达口语化、重复、缺乏文采"
+        fix: "精读优秀范文，积累好词好句，注意句式变化"
+      - tag: "字数不足"
+        severity: "high"
+        description: "未达到700字要求"
+        fix: "平时练习严格控制时间，训练写作速度"
+      - tag: "开头无力"
+        severity: "medium"
+        description: "开头平淡、套话、不能吸引阅卷老师"
+        fix: "练习多类型开头：名言引入/设问/场景描写/对比"
+      - tag: "结尾草率"
+        severity: "medium"
+        description: "虎头蛇尾，结尾仓促或空洞口号"
+        fix: "练习呼应开头、升华主题的结尾方式"
+
+  modern_reading:
+    name: "现代文阅读"
+    max_score: 36
+    description: "包括多文本阅读(18分)和文学类文本阅读(18分)"
+    subtypes:
+      multi_text:
+        name: "多文本阅读"
+        max_score: 18
+        description: "2-3篇相关材料比较阅读，选择题+简答题"
+        grading_dimensions:
+          - name: "信息提取"
+            max_score: 6
+            weight: 0.33
+            description: "能否准确提取和筛选文本信息"
+          - name: "比较分析"
+            max_score: 6
+            weight: 0.33
+            description: "能否对不同材料的异同进行比较"
+          - name: "概括整合"
+            max_score: 6
+            weight: 0.34
+            description: "能否综合多材料信息并进行概括"
+      literary:
+        name: "文学类文本阅读"
+        max_score: 18
+        description: "散文/小说阅读，理解+赏析+探究"
+        grading_dimensions:
+          - name: "内容理解"
+            max_score: 7
+            weight: 0.40
+            description: "对文本内容、情感、主旨的理解"
+          - name: "分析鉴赏"
+            max_score: 6
+            weight: 0.30
+            description: "对写作手法、语言特色的分析"
+          - name: "表达规范"
+            max_score: 5
+            weight: 0.30
+            description: "答题的条理性、完整性、术语使用"
+
+    common_mistakes:
+      - tag: "信息提取不准"
+        severity: "high"
+        description: "多文本比较时混淆信息来源，张冠李戴"
+      - tag: "概括不到位"
+        severity: "high"
+        description: "停留在表层复述，没有提炼概括"
+      - tag: "要点遗漏"
+        severity: "high"
+        description: "答题不全面，遗漏关键得分点"
+      - tag: "术语缺失"
+        severity: "medium"
+        description: "不会使用恰当的文学鉴赏术语"
+      - tag: "答题无层次"
+        severity: "medium"
+        description: "没有分点作答，答案成一大段"
+      - tag: "脱离文本"
+        severity: "high"
+        description: "主观发挥过多，缺少文本依据"
+
+  classical_chinese:
+    name: "文言文阅读"
+    max_score: 18
+    description: "课内外文言文阅读，实词/虚词/翻译/文意理解"
+
+    grading_dimensions:
+      - name: "字词理解"
+        max_score: 6
+        weight: 0.35
+        description: "实词释义、虚词用法辨析"
+      - name: "翻译准确"
+        max_score: 6
+        weight: 0.35
+        description: "文言翻译的准确性和通顺度"
+      - name: "文意把握"
+        max_score: 6
+        weight: 0.30
+        description: "对文章内容、观点、情感的理解"
+
+    common_mistakes:
+      - tag: "实词释义错误"
+        severity: "high"
+        description: "脱离上下文，生搬课本义项"
+      - tag: "虚词用法混淆"
+        severity: "high"
+        description: "常见虚词（之、其、而、以）的用法判断错误"
+      - tag: "翻译语序不当"
+        severity: "medium"
+        description: "未调整文言特殊句式（倒装、省略）"
+      - tag: "文意断章取义"
+        severity: "high"
+        description: "没有通读全文就作答，脱离整体语境"
+
+  poetry:
+    name: "古代诗歌阅读"
+    max_score: 12
+    description: "诗词鉴赏+理解性默写"
+
+    grading_dimensions:
+      - name: "意象理解"
+        max_score: 4
+        weight: 0.30
+        description: "对诗歌意象、意境的把握"
+      - name: "手法分析"
+        max_score: 4
+        weight: 0.35
+        description: "对修辞手法、表达技巧的辨识和分析"
+      - name: "情感把握"
+        max_score: 4
+        weight: 0.35
+        description: "对诗人情感态度的理解"
+
+    common_mistakes:
+      - tag: "手法辨识错误"
+        severity: "high"
+        description: "混淆修辞手法和表达方式"
+      - tag: "架空分析"
+        severity: "high"
+        description: "只贴标签不分析，没有结合诗句"
+      - tag: "情感理解偏差"
+        severity: "medium"
+        description: "没有考虑诗人背景和创作语境"
+      - tag: "答题模板化"
+        severity: "medium"
+        description: "套用万能模板，不具体问题具体分析"
+
+  micro_essay:
+    name: "微写作"
+    max_score: 10
+    description: "三选一，150字左右。实用类/议论类/抒情类。"
+
+    subtypes:
+      practical:
+        name: "实用类"
+        description: "通知/启事/推荐语/倡议书等应用文体"
+        grading_dimensions:
+          - name: "格式规范"
+            max_score: 3
+            weight: 0.30
+          - name: "内容准确"
+            max_score: 4
+            weight: 0.40
+          - name: "语言得体"
+            max_score: 3
+            weight: 0.30
+      argumentative:
+        name: "议论类"
+        description: "观点阐述、看法评论"
+        grading_dimensions:
+          - name: "观点鲜明"
+            max_score: 4
+            weight: 0.40
+          - name: "论证有力"
+            max_score: 3
+            weight: 0.30
+          - name: "语言简洁"
+            max_score: 3
+            weight: 0.30
+      lyrical:
+        name: "抒情类"
+        description: "场景描写、感悟抒发"
+        grading_dimensions:
+          - name: "画面生动"
+            max_score: 4
+            weight: 0.40
+          - name: "情感真挚"
+            max_score: 3
+            weight: 0.30
+          - name: "语言优美"
+            max_score: 3
+            weight: 0.30
+
+    common_mistakes:
+      - tag: "文体混淆"
+        severity: "high"
+        description: "实用文写成随笔，或者议论写成抒情"
+      - tag: "字数失控"
+        severity: "high"
+        description: "严重超出或不足150字"
+      - tag: "格式错误"
+        severity: "medium"
+        description: "应用文体格式不规范"
+      - tag: "内容空泛"
+        severity: "medium"
+        description: "缺乏具体内容，全是套话"
+
+# ===== 北京卷特色考点 =====
+
+beijing_specific_knowledge:
+  classics:
+    - name: "《红楼梦》"
+      exam_scope: "前八十回为主，重点考查人物形象、情节分析、艺术手法、主题思想"
+      key_points:
+        - "主要人物关系谱系（贾宝玉、林黛玉、薛宝钗、王熙凤等）"
+        - "重要情节的理解和分析（黛玉葬花、宝玉挨打、抄检大观园等）"
+        - "人物形象的多面性和复杂性"
+        - "'草蛇灰线，伏脉千里'的叙事艺术"
+        - "诗词曲赋与人物塑造的关系"
+      common_question_types:
+        - "结合具体情节分析人物性格"
+        - "看法探究类开放性题目"
+        - "微写作中的《红楼梦》主题写作"
+
+    - name: "《论语》"
+      exam_scope: "选读篇目，核心思想理解和现实意义阐发"
+      key_points:
+        - "仁、义、礼、智、信等核心概念"
+        - "孔子及其弟子的言行和性格"
+        - "经典章句的理解和当代价值"
+        - "《论语》对中华文化的影响"
+      common_question_types:
+        - "章句理解和翻译"
+        - "结合实际谈感悟"
+        - "比较不同章句的思想内涵"
+
+  culture:
+    - name: "北京地域文化"
+      relevance: "常作为阅读材料或写作背景"
+      topics:
+        - "北京胡同、四合院文化"
+        - "北京方言、民俗、老字号"
+        - "北京的历史变迁和城市发展"
+        - "京剧、曲艺等传统文化"
+
+    - name: "传统文化常识"
+      relevance: "融入文言文和诗歌语境考查"
+      topics:
+        - "古代官制、科举、礼仪"
+        - "传统节日、二十四节气"
+        - "古代地理、建筑、器物常识"

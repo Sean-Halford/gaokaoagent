@@ -1,0 +1,86 @@
+# LLM 提供商配置
+# DeepSeek 使用 Anthropic 兼容协议，其他使用 OpenAI 兼容协议
+
+providers:
+  deepseek:
+    name: "DeepSeek"
+    protocol: anthropic                           # Anthropic 兼容协议
+    base_url: "https://api.deepseek.com/anthropic"
+    api_key_env: "DEEPSEEK_API_KEY"
+    models:
+      chat: "deepseek-v4-pro[1m]"
+      reasoner: "deepseek-v4-pro[1m]"
+
+  doubao:
+    name: "豆包 (火山引擎)"
+    protocol: openai
+    base_url: "https://ark.cn-beijing.volces.com/api/v3"
+    api_key_env: "DOUBAO_API_KEY"
+    models:
+      pro: "doubao-1.5-pro-32k"
+      lite: "doubao-1.5-lite-32k"
+      vision: "doubao-1.5-vision-pro-32k"
+
+  qwen:
+    name: "千问 (阿里)"
+    protocol: openai
+    base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    api_key_env: "QWEN_API_KEY"
+    models:
+      plus: "qwen-plus"
+      max: "qwen-max"
+
+  glm:
+    name: "智谱 GLM"
+    protocol: openai
+    base_url: "https://open.bigmodel.cn/api/paas/v4"
+    api_key_env: "GLM_API_KEY"
+    models:
+      flash: "glm-4-flash"
+      air: "glm-4-air"
+
+# 任务 → 模型路由
+routing:
+  big_essay:
+    provider: deepseek
+    model: chat
+    temperature: 0.3
+    max_tokens: 4096
+
+  modern_reading:
+    provider: deepseek
+    model: chat
+    temperature: 0.2
+    max_tokens: 4096
+
+  classical_chinese:
+    provider: deepseek
+    model: chat
+    temperature: 0.2
+    max_tokens: 4096
+
+  poetry:
+    provider: deepseek
+    model: chat
+    temperature: 0.2
+    max_tokens: 4096
+
+  micro_essay:
+    provider: deepseek
+    model: chat
+    temperature: 0.3
+    max_tokens: 2048
+
+  tagging:
+    provider: deepseek
+    model: chat
+    temperature: 0.1
+    max_tokens: 1024
+
+  vision_fallback:
+    provider: deepseek
+    model: chat
+    temperature: 0.1
+    max_tokens: 1024
+
+default_provider: deepseek

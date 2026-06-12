@@ -1,0 +1,13 @@
+[project]
+name = "gaokao-agent"
+version = "0.1.0"
+description = "高考语文刷题助手 - 北京卷专用 AI 评估工具"
+requires-python = ">=3.11"
+readme = "DEVELOPMENT_PLAN.md"
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["src*"]
